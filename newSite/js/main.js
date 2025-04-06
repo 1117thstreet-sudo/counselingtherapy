@@ -1,6 +1,13 @@
 // Main JavaScript for Counseling Therapy Website
 
 document.addEventListener('DOMContentLoaded', function() {
+  // Load header and footer components
+  loadComponent('header', 'header.header');
+  loadComponent('footer', 'footer.footer');
+
+  // Initialize testimonials carousel
+  initTestimonialsCarousel();
+
   // Mobile Navigation Toggle
   const navToggle = document.querySelector('.nav-toggle');
   const navMenu = document.querySelector('.nav ul');
@@ -109,4 +116,120 @@ document.addEventListener('DOMContentLoaded', function() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   }
-}); 
+});
+
+/**
+ * Load a component from the components directory
+ * @param {string} componentName - Name of the component file (without .html)
+ * @param {string} targetSelector - CSS selector for the element to insert the component into
+ */
+function loadComponent(componentName, targetSelector) {
+  const targetElement = document.querySelector(targetSelector);
+  if (!targetElement) return;
+  
+  fetch(`components/${componentName}.html`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Failed to load ${componentName} component`);
+      }
+      return response.text();
+    })
+    .then(html => {
+      targetElement.innerHTML = html;
+      
+      // If it's the header component, reinitialize the navigation
+      if (componentName === 'header') {
+        initializeNavigation();
+      }
+    })
+    .catch(error => {
+      console.error(`Error loading ${componentName} component:`, error);
+    });
+}
+
+/**
+ * Initialize navigation after header is loaded dynamically
+ */
+function initializeNavigation() {
+  const currentPage = window.location.pathname.split('/').pop();
+  const navLinks = document.querySelectorAll('.nav a');
+  
+  navLinks.forEach(link => {
+    const linkPage = link.getAttribute('href');
+    if (currentPage === linkPage || (currentPage === '' && linkPage === 'index.html')) {
+      link.classList.add('active');
+    }
+  });
+  
+  // Reinitialize mobile navigation
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav ul');
+  
+  if (navToggle) {
+    navToggle.addEventListener('click', function() {
+      navMenu.classList.toggle('show');
+      navToggle.classList.toggle('active');
+    });
+  }
+}
+
+/**
+ * Initialize testimonials carousel functionality
+ */
+function initTestimonialsCarousel() {
+  const carousel = document.querySelector('.testimonials-carousel');
+  if (!carousel) return;
+  
+  const testimonials = carousel.querySelectorAll('.testimonial');
+  const dots = carousel.querySelectorAll('.dot');
+  let currentIndex = 0;
+  let interval;
+  
+  // Function to show testimonial at given index
+  function showTestimonial(index) {
+    // Remove active class from all testimonials and dots
+    testimonials.forEach(testimonial => {
+      testimonial.classList.remove('active');
+      testimonial.classList.remove('prev');
+    });
+    
+    dots.forEach(dot => {
+      dot.classList.remove('active');
+    });
+    
+    // Add prev class to the previous testimonial
+    const prevIndex = (index === 0) ? testimonials.length - 1 : index - 1;
+    testimonials[prevIndex].classList.add('prev');
+    
+    // Add active class to current testimonial and dot
+    testimonials[index].classList.add('active');
+    dots[index].classList.add('active');
+    
+    // Update currentIndex
+    currentIndex = index;
+  }
+  
+  // Function to advance to next testimonial
+  function nextTestimonial() {
+    const nextIndex = (currentIndex + 1) % testimonials.length;
+    showTestimonial(nextIndex);
+  }
+  
+  // Add click event listeners to dots
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      clearInterval(interval);
+      showTestimonial(index);
+      startCarousel();
+    });
+  });
+  
+  // Function to start automatic carousel rotation
+  function startCarousel() {
+    interval = setInterval(nextTestimonial, 5000);
+  }
+  
+  // Initialize the carousel
+  showTestimonial(0);
+  startCarousel();
+} 
