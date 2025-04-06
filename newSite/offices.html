@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Offices - Counseling Therapy</title>
+  <meta name="description" content="Find our convenient therapy office locations in New York and Los Angeles. Comfortable, confidential spaces for your counseling sessions.">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="images/ct.png" type="image/png">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* Additional styles for offices page */
+    .office-location {
+      padding: 4rem 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .office-location:last-child {
+      border-bottom: none;
+    }
+    
+    .office-details {
+      display: flex;
+      gap: 3rem;
+      align-items: flex-start;
+    }
+    
+    .office-info {
+      flex: 1;
+    }
+    
+    .office-image {
+      flex: 1;
+    }
+    
+    .contact-details {
+      margin-top: 2rem;
+    }
+    
+    .contact-details h4 {
+      margin-bottom: 1rem;
+    }
+    
+    .contact-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .contact-list li {
+      padding-left: 1.5rem;
+      position: relative;
+      margin-bottom: 0.75rem;
+    }
+    
+    .contact-list li:before {
+      content: "•";
+      color: var(--secondary-color);
+      position: absolute;
+      left: 0;
+    }
+    
+    .amenities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .amenity {
+      background-color: var(--bg-color);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+    
+    .map-container {
+      margin-top: 2rem;
+      height: 300px;
+      background-color: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+    }
+    
+    @media (max-width: 768px) {
+      .office-details {
+        flex-direction: column;
+      }
+      
+      .office-image {
+        order: -1;
+        margin-bottom: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/ct.png" alt="Counseling Therapy Logo">
+          <h1>Counseling Therapy</h1>
+        </a>
+      </div>
+      
+      <nav class="nav">
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="offices.html" class="active">Offices</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Our Office Locations</h1>
+      <p>We provide comfortable, confidential spaces for your therapy sessions in convenient locations.</p>
+    </div>
+  </section>
+
+  <!-- Offices Overview -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Visit Us</h2>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">Our therapy offices are designed to provide a safe, comfortable environment where you can focus on your mental health journey. We have two primary locations on the East and West coasts to better serve our clients.</p>
+      
+      <div id="new-york" class="office-location">
+        <h2>New York Office</h2>
+        <div class="office-details">
+          <div class="office-info">
+            <p>Our flagship location in Manhattan offers a serene escape from the bustling city. Located in a historic building that has been thoughtfully renovated to create a warm, inviting atmosphere, our New York office features spacious therapy rooms with comfortable furnishings and soundproofing for complete privacy.</p>
+            
+            <div class="contact-details">
+              <h4>Contact Information</h4>
+              <ul class="contact-list">
+                <li>123 Therapy Lane, New York, NY 10001</li>
+                <li>Phone: (212) 555-1234</li>
+                <li>Email: newyork@counselingtherapy.com</li>
+                <li>Hours: Monday-Friday 8am-8pm, Saturday 9am-5pm</li>
+              </ul>
+            </div>
+            
+            <div class="office-amenities">
+              <h4>Office Amenities</h4>
+              <div class="amenities">
+                <span class="amenity">Comfortable Waiting Area</span>
+                <span class="amenity">Complimentary Tea & Water</span>
+                <span class="amenity">Wheelchair Accessible</span>
+                <span class="amenity">Private Bathrooms</span>
+                <span class="amenity">Noise Machines</span>
+                <span class="amenity">Close to Public Transit</span>
+              </div>
+            </div>
+            
+            <div class="map-container">
+              <p>[Map location placeholder - 123 Therapy Lane, New York, NY 10001]</p>
+            </div>
+          </div>
+          <div class="office-image">
+            <img src="images/image_desktop.png" alt="New York Office">
+            <p class="image-caption">Our welcoming reception area in the New York office</p>
+          </div>
+        </div>
+      </div>
+      
+      <div id="los-angeles" class="office-location">
+        <h2>Los Angeles Office</h2>
+        <div class="office-details">
+          <div class="office-info">
+            <p>Our Los Angeles location offers a bright, airy space with views of the surrounding landscape. Designed with a focus on natural elements and light, this office creates a calming environment that supports healing and personal growth. Located in a central area, our LA office is easily accessible from multiple neighborhoods.</p>
+            
+            <div class="contact-details">
+              <h4>Contact Information</h4>
+              <ul class="contact-list">
+                <li>456 Healing Blvd, Los Angeles, CA 90001</li>
+                <li>Phone: (310) 555-5678</li>
+                <li>Email: la@counselingtherapy.com</li>
+                <li>Hours: Monday-Friday 8am-8pm, Saturday 9am-5pm</li>
+              </ul>
+            </div>
+            
+            <div class="office-amenities">
+              <h4>Office Amenities</h4>
+              <div class="amenities">
+                <span class="amenity">Outdoor Waiting Area</span>
+                <span class="amenity">Meditation Garden</span>
+                <span class="amenity">Complimentary Refreshments</span>
+                <span class="amenity">Wheelchair Accessible</span>
+                <span class="amenity">Free Parking</span>
+                <span class="amenity">Child-Friendly Area</span>
+              </div>
+            </div>
+            
+            <div class="map-container">
+              <p>[Map location placeholder - 456 Healing Blvd, Los Angeles, CA 90001]</p>
+            </div>
+          </div>
+          <div class="office-image">
+            <img src="images/image_desktop.png" alt="Los Angeles Office">
+            <p class="image-caption">The peaceful therapy space at our Los Angeles location</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Virtual Sessions Section -->
+  <section class="section" style="background-color: var(--bg-color);">
+    <div class="container">
+      <h2 class="section-title">Virtual Therapy Options</h2>
+      <div class="row">
+        <div class="col">
+          <h3>Telehealth Sessions</h3>
+          <p>We understand that in-person therapy isn't always possible or convenient. That's why we offer secure, HIPAA-compliant video sessions that allow you to connect with your therapist from the comfort of your own space. Virtual therapy provides the same quality care as in-person sessions, with added flexibility.</p>
+          <p>Our telehealth platform is easy to use and requires only a computer or smartphone with internet access. Your therapist will provide simple instructions for joining your session.</p>
+        </div>
+        <div class="col">
+          <h3>Benefits of Virtual Therapy</h3>
+          <ul>
+            <li>Convenience and flexibility in scheduling</li>
+            <li>No commute or travel time</li>
+            <li>Access to care from anywhere</li>
+            <li>Comfort of your familiar environment</li>
+            <li>Same evidence-based therapeutic approaches</li>
+            <li>Consistent care even when traveling</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What to Expect Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">What to Expect on Your First Visit</h2>
+      <div class="steps">
+        <div class="step">
+          <h3>1. Check-In</h3>
+          <p>When you arrive, you'll be greeted by our receptionist who will help you complete any necessary paperwork. We recommend arriving 10-15 minutes early for your first appointment.</p>
+        </div>
+        <div class="step">
+          <h3>2. Waiting Area</h3>
+          <p>Relax in our comfortable waiting area until your therapist is ready to meet you. Complimentary beverages are available for your convenience.</p>
+        </div>
+        <div class="step">
+          <h3>3. Session Space</h3>
+          <p>Your therapist will guide you to a private therapy room where your session will take place. All our therapy rooms are designed for comfort and confidentiality.</p>
+        </div>
+        <div class="step">
+          <h3>4. Initial Consultation</h3>
+          <p>Your first session will focus on getting to know you and understanding your concerns. This is also a time for you to ask questions and determine if the therapist is a good fit for your needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section" style="background-color: var(--bg-color);">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faqs">
+        <div class="faq">
+          <h3>Is parking available at your offices?</h3>
+          <p>Our Los Angeles office offers free on-site parking for clients. Our New York office is located near several parking garages, though we recommend using public transportation when possible due to limited parking in Manhattan.</p>
+        </div>
+        <div class="faq">
+          <h3>Are your offices accessible for people with disabilities?</h3>
+          <p>Yes, both of our locations are fully wheelchair accessible with elevator access, accessible restrooms, and accommodations for service animals. If you have specific accessibility needs, please let us know when scheduling your appointment so we can ensure a comfortable experience.</p>
+        </div>
+        <div class="faq">
+          <h3>Can I reschedule or cancel my appointment?</h3>
+          <p>Yes, we understand that schedules change. We ask that you provide at least 24 hours' notice for cancellations or rescheduling to avoid a cancellation fee. You can make changes to your appointment by calling our office or using our online portal.</p>
+        </div>
+        <div class="faq">
+          <h3>How early should I arrive for my first appointment?</h3>
+          <p>We recommend arriving 10-15 minutes before your scheduled appointment time for your first visit. This allows time to complete any necessary paperwork and get comfortable in our space before your session begins.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h3>Counseling Therapy</h3>
+          <p>Professional mental health services committed to helping you achieve well-being and personal growth.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="offices.html">Offices</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a href="services.html#individual">Individual Therapy</a></li>
+            <li><a href="services.html#couples">Couples Therapy</a></li>
+            <li><a href="services.html#family">Family Counseling</a></li>
+            <li><a href="services.html#anxiety">Anxiety Treatment</a></li>
+            <li><a href="services.html#depression">Depression Therapy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul class="footer-links">
+            <li>123 Therapy Lane, New York, NY 10001</li>
+            <li>Phone: (212) 555-1234</li>
+            <li>Email: info@counselingtherapy.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2023 Counseling Therapy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html> 
