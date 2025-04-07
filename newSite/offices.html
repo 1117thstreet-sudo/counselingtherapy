@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Offices - Counseling Therapy</title>
-  <meta name="description" content="Find our convenient therapy office locations in New York and Los Angeles. Comfortable, confidential spaces for your counseling sessions.">
+  <title>Our Office - Counseling Therapy</title>
+  <meta name="description" content="Visit our welcoming therapy office in Garden City. A comfortable, confidential space designed for your healing journey.">
   
   <!-- Favicon -->
   <link rel="shortcut icon" href="images/ct.png" type="image/png">
@@ -19,88 +19,276 @@
   <link rel="stylesheet" href="css/styles.css">
 
   <style>
-    /* Additional styles for offices page */
-    .office-location {
-      padding: 4rem 0;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    /* Enhanced styles for office page */
+    .office-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
     }
     
-    .office-location:last-child {
-      border-bottom: none;
-    }
-    
-    .office-details {
-      display: flex;
-      gap: 3rem;
-      align-items: flex-start;
-    }
-    
-    .office-info {
-      flex: 1;
-    }
-    
-    .office-image {
-      flex: 1;
-    }
-    
-    .contact-details {
-      margin-top: 2rem;
-    }
-    
-    .contact-details h4 {
-      margin-bottom: 1rem;
-    }
-    
-    .contact-list {
-      list-style: none;
-      padding: 0;
-    }
-    
-    .contact-list li {
-      padding-left: 1.5rem;
-      position: relative;
-      margin-bottom: 0.75rem;
-    }
-    
-    .contact-list li:before {
-      content: "•";
-      color: var(--secondary-color);
-      position: absolute;
-      left: 0;
-    }
-    
-    .amenities {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    
-    .amenity {
-      background-color: var(--bg-color);
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.9rem;
-    }
-    
-    .map-container {
-      margin-top: 2rem;
-      height: 300px;
-      background-color: #f0f0f0;
+    .office-hero {
+      height: 70vh;
+      background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/about1.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 4px;
+      text-align: center;
+      margin-bottom: 4rem;
+      border-radius: 0 0 30% 30% / 15%;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .office-hero-content {
+      max-width: 800px;
+      padding: 2rem;
+      background-color: rgba(0,0,0,0.4);
+      backdrop-filter: blur(5px);
+      border-radius: 10px;
+      z-index: 2;
+    }
+    
+    .office-hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    
+    .office-hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .office-details {
+      padding: 4rem 0;
+    }
+    
+    .address-container {
+      background-color: var(--bg-color);
+      padding: 3rem;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      margin-bottom: 4rem;
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+    }
+    
+    .address-content {
+      flex: 1;
+    }
+    
+    .address-map {
+      flex: 1;
+      height: 300px;
+      background-color: #f0f0f0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .gallery-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    
+    .gallery-title:after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--secondary-color);
+    }
+    
+    .office-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+    
+    .gallery-item {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 300px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+      color: white;
+      padding: 1.5rem;
+      font-size: 1.1rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .gallery-item:hover .gallery-caption {
+      opacity: 1;
+    }
+    
+    .amenities-section {
+      padding: 5rem 0;
+      background-color: var(--bg-color);
+      margin: 4rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .amenities-section:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    }
+    
+    .amenities-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    
+    .amenity-card {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .amenity-card:hover {
+      transform: scale(1.05);
+    }
+    
+    .amenity-icon {
+      width: 60px;
+      height: 60px;
+      background-color: var(--bg-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      color: var(--primary-color);
+      font-size: 1.5rem;
+    }
+    
+    .visit-section {
+      margin: 4rem 0;
+      text-align: center;
+    }
+    
+    .appointment-button {
+      display: inline-block;
+      padding: 1.2rem 2.5rem;
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      color: white;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: 2rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .appointment-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+    
+    .testimonial-section {
+      padding: 4rem 0;
+      text-align: center;
+    }
+    
+    .testimonial {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    
+    .testimonial:before {
+      content: """;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 5rem;
+      color: var(--bg-color);
+      font-family: 'Playfair Display', serif;
+      line-height: 1;
+    }
+    
+    .testimonial p {
+      font-style: italic;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    
+    .testimonial-author {
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+    
+    @media (max-width: 992px) {
+      .office-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .amenities-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .address-container {
+        flex-direction: column;
+      }
     }
     
     @media (max-width: 768px) {
-      .office-details {
-        flex-direction: column;
+      .office-hero h1 {
+        font-size: 2.5rem;
       }
       
-      .office-image {
-        order: -1;
-        margin-bottom: 2rem;
+      .office-gallery {
+        grid-template-columns: 1fr;
+      }
+      
+      .amenities-container {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -109,174 +297,169 @@
   <!-- Header - will be loaded via JavaScript -->
   <header class="header"></header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <h1>Our Office Locations</h1>
-      <p>We provide comfortable, confidential spaces for your therapy sessions in convenient locations.</p>
+  <!-- Office Hero Section -->
+  <section class="office-hero">
+    <div class="office-hero-content">
+      <h1>Your Journey Begins Here</h1>
+      <p>Our Garden City office provides a tranquil sanctuary where healing and growth flourish</p>
     </div>
   </section>
 
-  <!-- Offices Overview -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Visit Us</h2>
-      <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">Our therapy offices are designed to provide a safe, comfortable environment where you can focus on your mental health journey. We have two primary locations on the East and West coasts to better serve our clients.</p>
-      
-      <div id="new-york" class="office-location">
-        <h2>New York Office</h2>
-        <div class="office-details">
-          <div class="office-info">
-            <p>Our flagship location in Manhattan offers a serene escape from the bustling city. Located in a historic building that has been thoughtfully renovated to create a warm, inviting atmosphere, our New York office features spacious therapy rooms with comfortable furnishings and soundproofing for complete privacy.</p>
-            
-            <div class="contact-details">
-              <h4>Contact Information</h4>
-              <ul class="contact-list">
-                <li>123 Therapy Lane, New York, NY 10001</li>
-                <li>Phone: (212) 555-1234</li>
-                <li>Email: newyork@counselingtherapy.com</li>
-                <li>Hours: Monday-Friday 8am-8pm, Saturday 9am-5pm</li>
-              </ul>
-            </div>
-            
-            <div class="office-amenities">
-              <h4>Office Amenities</h4>
-              <div class="amenities">
-                <span class="amenity">Comfortable Waiting Area</span>
-                <span class="amenity">Complimentary Tea & Water</span>
-                <span class="amenity">Wheelchair Accessible</span>
-                <span class="amenity">Private Bathrooms</span>
-                <span class="amenity">Noise Machines</span>
-                <span class="amenity">Close to Public Transit</span>
-              </div>
-            </div>
-            
-            <div class="map-container">
-              <p>[Map location placeholder - 123 Therapy Lane, New York, NY 10001]</p>
-            </div>
+  <div class="office-container">
+    <!-- Office Introduction -->
+    <section class="office-details">
+      <div class="address-container">
+        <div class="address-content">
+          <h2>Visit Our Garden City Office</h2>
+          <p>Located in the heart of Garden City, our office is designed to be a peaceful retreat from life's daily stresses. Each element of our space has been carefully selected to create an environment of comfort, safety, and calm.</p>
+          
+          <div class="contact-info" style="margin-top: 2rem;">
+            <h3>Contact Information</h3>
+            <p><strong>Address:</strong> 123 Therapy Way, Garden City, NY 11530</p>
+            <p><strong>Phone:</strong> (516) 555-7890</p>
+            <p><strong>Email:</strong> info@counselingtherapy.com</p>
+            <p><strong>Hours:</strong> Monday-Friday 9am-7pm, Saturday 10am-3pm</p>
           </div>
-          <div class="office-image">
-            <img src="images/image_desktop.png" alt="New York Office">
-            <p class="image-caption">Our welcoming reception area in the New York office</p>
+        </div>
+        <div class="address-map">
+          <!-- Replace with actual Google Maps embed code -->
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#eee">
+            <p>Google Maps of 123 Therapy Way, Garden City, NY 11530</p>
           </div>
         </div>
       </div>
       
-      <div id="los-angeles" class="office-location">
-        <h2>Los Angeles Office</h2>
-        <div class="office-details">
-          <div class="office-info">
-            <p>Our Los Angeles location offers a bright, airy space with views of the surrounding landscape. Designed with a focus on natural elements and light, this office creates a calming environment that supports healing and personal growth. Located in a central area, our LA office is easily accessible from multiple neighborhoods.</p>
-            
-            <div class="contact-details">
-              <h4>Contact Information</h4>
-              <ul class="contact-list">
-                <li>456 Healing Blvd, Los Angeles, CA 90001</li>
-                <li>Phone: (310) 555-5678</li>
-                <li>Email: la@counselingtherapy.com</li>
-                <li>Hours: Monday-Friday 8am-8pm, Saturday 9am-5pm</li>
-              </ul>
-            </div>
-            
-            <div class="office-amenities">
-              <h4>Office Amenities</h4>
-              <div class="amenities">
-                <span class="amenity">Outdoor Waiting Area</span>
-                <span class="amenity">Meditation Garden</span>
-                <span class="amenity">Complimentary Refreshments</span>
-                <span class="amenity">Wheelchair Accessible</span>
-                <span class="amenity">Free Parking</span>
-                <span class="amenity">Child-Friendly Area</span>
-              </div>
-            </div>
-            
-            <div class="map-container">
-              <p>[Map location placeholder - 456 Healing Blvd, Los Angeles, CA 90001]</p>
-            </div>
+      <h2 class="gallery-title">Experience Our Space</h2>
+      <div class="office-gallery">
+        <div class="gallery-item">
+          <img src="images/home1.webp" alt="Reception Area">
+          <div class="gallery-caption">Our welcoming reception area</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/services1.jpg" alt="Therapy Room">
+          <div class="gallery-caption">Private therapy space designed for comfort</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/services2.jpg" alt="Family Therapy Room">
+          <div class="gallery-caption">Spacious room for family and group sessions</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/home3.jpg" alt="Waiting Area">
+          <div class="gallery-caption">Comfortable waiting area with refreshments</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/services3.jpg" alt="Meditation Corner">
+          <div class="gallery-caption">Dedicated space for mindfulness practices</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/services4.jpg" alt="Play Therapy Room">
+          <div class="gallery-caption">Specialized room for child and play therapy</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section class="amenities-section">
+      <div class="office-container">
+        <h2 class="gallery-title">Office Amenities</h2>
+        <div class="amenities-container">
+          <div class="amenity-card">
+            <div class="amenity-icon">P</div>
+            <h3>Free Parking</h3>
+            <p>Convenient on-site parking available for all clients</p>
           </div>
-          <div class="office-image">
-            <img src="images/image_desktop.png" alt="Los Angeles Office">
-            <p class="image-caption">The peaceful therapy space at our Los Angeles location</p>
+          <div class="amenity-card">
+            <div class="amenity-icon">W</div>
+            <h3>Wheelchair Accessible</h3>
+            <p>Our facility is fully accessible for all clients</p>
+          </div>
+          <div class="amenity-card">
+            <div class="amenity-icon">R</div>
+            <h3>Refreshments</h3>
+            <p>Complimentary tea, coffee, and water available</p>
+          </div>
+          <div class="amenity-card">
+            <div class="amenity-icon">S</div>
+            <h3>Soundproofed Rooms</h3>
+            <p>Complete privacy during your therapy sessions</p>
+          </div>
+          <div class="amenity-card">
+            <div class="amenity-icon">C</div>
+            <h3>Child-Friendly Space</h3>
+            <p>Dedicated area with activities for children</p>
+          </div>
+          <div class="amenity-card">
+            <div class="amenity-icon">N</div>
+            <h3>Noise Machines</h3>
+            <p>Additional privacy with white noise technology</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Virtual Sessions Section -->
-  <section class="section" style="background-color: var(--bg-color);">
-    <div class="container">
-      <h2 class="section-title">Virtual Therapy Options</h2>
-      <div class="row">
-        <div class="col">
-          <h3>Telehealth Sessions</h3>
-          <p>We understand that in-person therapy isn't always possible or convenient. That's why we offer secure, HIPAA-compliant video sessions that allow you to connect with your therapist from the comfort of your own space. Virtual therapy provides the same quality care as in-person sessions, with added flexibility.</p>
-          <p>Our telehealth platform is easy to use and requires only a computer or smartphone with internet access. Your therapist will provide simple instructions for joining your session.</p>
+    <!-- Virtual Therapy Section -->
+    <section class="virtual-section">
+      <h2 class="gallery-title">Virtual Therapy Options</h2>
+      <div style="display:flex;gap:2rem;margin-top:3rem;">
+        <div style="flex:1;">
+          <h3>Can't Visit In Person?</h3>
+          <p>We understand that in-person visits aren't always possible. That's why we offer secure, HIPAA-compliant telehealth sessions, allowing you to connect with your therapist from anywhere.</p>
+          <p>Our virtual therapy platform provides the same quality care with added convenience and flexibility. All you need is a computer or smartphone with internet access.</p>
         </div>
-        <div class="col">
-          <h3>Benefits of Virtual Therapy</h3>
-          <ul>
-            <li>Convenience and flexibility in scheduling</li>
-            <li>No commute or travel time</li>
-            <li>Access to care from anywhere</li>
-            <li>Comfort of your familiar environment</li>
-            <li>Same evidence-based therapeutic approaches</li>
-            <li>Consistent care even when traveling</li>
+        <div style="flex:1;">
+          <h3>Benefits of Virtual Sessions</h3>
+          <ul style="list-style-type:none;padding-left:0;">
+            <li style="margin-bottom:0.75rem;padding-left:1.5rem;position:relative;">
+              <span style="position:absolute;left:0;color:var(--secondary-color);">✓</span> Convenience and flexibility in scheduling
+            </li>
+            <li style="margin-bottom:0.75rem;padding-left:1.5rem;position:relative;">
+              <span style="position:absolute;left:0;color:var(--secondary-color);">✓</span> No commute or travel time
+            </li>
+            <li style="margin-bottom:0.75rem;padding-left:1.5rem;position:relative;">
+              <span style="position:absolute;left:0;color:var(--secondary-color);">✓</span> Therapy from the comfort of your home
+            </li>
+            <li style="margin-bottom:0.75rem;padding-left:1.5rem;position:relative;">
+              <span style="position:absolute;left:0;color:var(--secondary-color);">✓</span> Same evidence-based therapeutic approaches
+            </li>
           </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- What to Expect Section -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">What to Expect on Your First Visit</h2>
-      <div class="steps">
-        <div class="step">
-          <h3>1. Check-In</h3>
-          <p>When you arrive, you'll be greeted by our receptionist who will help you complete any necessary paperwork. We recommend arriving 10-15 minutes early for your first appointment.</p>
+    <!-- First Visit Section -->
+    <section class="visit-section">
+      <h2 class="gallery-title">Your First Visit</h2>
+      <p>We've designed our intake process to be straightforward and comfortable, allowing us to focus on what matters most: your well-being.</p>
+      
+      <div style="display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:3rem;">
+        <div style="flex:1;min-width:250px;padding:2rem;background-color:var(--bg-color);border-radius:10px;text-align:left;">
+          <h3 style="border-bottom:2px solid var(--secondary-color);padding-bottom:0.5rem;">Before Your Appointment</h3>
+          <p>Complete your intake forms online through our secure client portal. This saves time during your first visit and allows your therapist to prepare for your session.</p>
         </div>
-        <div class="step">
-          <h3>2. Waiting Area</h3>
-          <p>Relax in our comfortable waiting area until your therapist is ready to meet you. Complimentary beverages are available for your convenience.</p>
+        
+        <div style="flex:1;min-width:250px;padding:2rem;background-color:var(--bg-color);border-radius:10px;text-align:left;">
+          <h3 style="border-bottom:2px solid var(--secondary-color);padding-bottom:0.5rem;">Arrival</h3>
+          <p>Arrive 10-15 minutes early to get settled. You'll be greeted by our receptionist who will help you check in and answer any questions you might have.</p>
         </div>
-        <div class="step">
-          <h3>3. Session Space</h3>
-          <p>Your therapist will guide you to a private therapy room where your session will take place. All our therapy rooms are designed for comfort and confidentiality.</p>
-        </div>
-        <div class="step">
-          <h3>4. Initial Consultation</h3>
-          <p>Your first session will focus on getting to know you and understanding your concerns. This is also a time for you to ask questions and determine if the therapist is a good fit for your needs.</p>
+        
+        <div style="flex:1;min-width:250px;padding:2rem;background-color:var(--bg-color);border-radius:10px;text-align:left;">
+          <h3 style="border-bottom:2px solid var(--secondary-color);padding-bottom:0.5rem;">Your Session</h3>
+          <p>Your therapist will guide you to a private room where you'll discuss your goals for therapy and begin developing a personalized treatment plan.</p>
         </div>
       </div>
-    </div>
-  </section>
+      
+      <a href="contact.html" class="appointment-button">Schedule Your Visit</a>
+    </section>
 
-  <!-- FAQ Section -->
-  <section class="section" style="background-color: var(--bg-color);">
-    <div class="container">
-      <h2 class="section-title">Frequently Asked Questions</h2>
-      <div class="faqs">
-        <div class="faq">
-          <h3>Is parking available at your offices?</h3>
-          <p>Our Los Angeles office offers free on-site parking for clients. Our New York office is located near several parking garages, though we recommend using public transportation when possible due to limited parking in Manhattan.</p>
-        </div>
-        <div class="faq">
-          <h3>Are your offices accessible for people with disabilities?</h3>
-          <p>Yes, both of our locations are fully wheelchair accessible with elevator access, accessible restrooms, and accommodations for service animals. If you have specific accessibility needs, please let us know when scheduling your appointment so we can ensure a comfortable experience.</p>
-        </div>
-        <div class="faq">
-          <h3>Can I reschedule or cancel my appointment?</h3>
-          <p>Yes, we understand that schedules change. We ask that you provide at least 24 hours' notice for cancellations or rescheduling to avoid a cancellation fee. You can make changes to your appointment by calling our office or using our online portal.</p>
-        </div>
-        <div class="faq">
-          <h3>How early should I arrive for my first appointment?</h3>
-          <p>We recommend arriving 10-15 minutes before your scheduled appointment time for your first visit. This allows time to complete any necessary paperwork and get comfortable in our space before your session begins.</p>
-        </div>
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+      <h2 class="gallery-title">What Our Clients Say</h2>
+      <div class="testimonial">
+        <p>"From the moment I walked into the Garden City office, I felt at ease. The environment is so peaceful and the staff made me feel welcomed and supported. My therapy journey has been transformative, and I believe the comfortable space has been a part of that process."</p>
+        <div class="testimonial-author">- J.M., Client since 2021</div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <!-- Footer - will be loaded via JavaScript -->
   <footer class="footer"></footer>

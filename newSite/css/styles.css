@@ -196,7 +196,23 @@ img {
 .hero {
   padding: 5rem 0;
   background-color: var(--bg-color);
-  text-align: center;
+}
+
+.hero .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  text-align: left;
+}
+
+.hero-image {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.hero-content {
+  flex: 1;
 }
 
 .hero h1 {
@@ -206,8 +222,7 @@ img {
 
 .hero p {
   font-size: 1.25rem;
-  max-width: 800px;
-  margin: 0 auto 2rem;
+  margin-bottom: 2rem;
 }
 
 /* Button Styles */
@@ -299,6 +314,20 @@ img {
 
 .about-image {
   flex: 1;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.image-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
 /* Services */
@@ -606,6 +635,21 @@ input:focus, select:focus, textarea:focus {
   
   .about-content {
     flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .image-grid {
+    gap: 8px;
+  }
+  
+  .hero .row {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero-image {
+    padding-right: 0;
+    margin-bottom: 2rem;
   }
   
   .hero h1 {
@@ -626,4 +670,36 @@ input:focus, select:focus, textarea:focus {
     width: 100%;
     margin-bottom: 1rem;
   }
+}
+
+/* Banner Section */
+.banner {
+  position: relative;
+  width: 100%;
+  max-height: 300px; /* Cropped height */
+  overflow: hidden;
+}
+
+.banner-image {
+  width: 100%;
+  filter: blur(3px); /* Apply blur effect */
+  object-fit: cover;
+  height: 300px; /* Fixed height for cropping */
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.banner-overlay h1 {
+  color: var(--text-color-light);
+  text-align: center;
 } 

@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Services - Counseling Therapy</title>
-  <meta name="description" content="Explore our comprehensive range of mental health services including individual therapy, couples counseling, family therapy, and specialized treatments.">
-  
+  <meta name="description"
+    content="Explore our comprehensive range of mental health services including individual therapy, couples counseling, family therapy, and specialized treatments.">
+
   <!-- Favicon -->
   <link rel="shortcut icon" href="images/ct.png" type="image/png">
-  
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/styles.css">
 
@@ -24,49 +28,93 @@
       padding: 4rem 0;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
-    
+
     .service-detail:last-child {
       border-bottom: none;
     }
-    
+
     .service-content {
       display: flex;
       gap: 3rem;
       align-items: center;
     }
-    
+
     .service-text {
       flex: 3;
     }
-    
+
     .service-image {
       flex: 2;
     }
-    
+
     .service-benefits {
       margin-top: 2rem;
     }
-    
+
     .service-benefits h4 {
       margin-bottom: 1rem;
     }
-    
+
     .benefits-list {
       list-style: none;
       padding: 0;
     }
-    
+
     .benefits-list li {
       padding-left: 1.5rem;
       position: relative;
       margin-bottom: 0.5rem;
     }
-    
+
     .benefits-list li:before {
       content: "✓";
       color: var(--secondary-color);
       position: absolute;
       left: 0;
+    }
+
+    /* Custom services list layout */
+    .services-list {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .service-column {
+      width: calc(50% - 1rem);
+      float: left;
+    }
+    
+    .service-column:first-child {
+      margin-right: 2rem;
+    }
+    
+    .service {
+      width: 100%;
+      margin-bottom: 2rem;
+      padding: 2rem;
+      background-color: var(--bg-color);
+      border-radius: 4px;
+      text-align: center;
+    }
+    
+    .service p {
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    
+    .service h3 {
+      margin-bottom: 1rem;
+    }
+    
+    .service-image {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 1.5rem;
     }
     
     @media (max-width: 768px) {
@@ -78,16 +126,54 @@
         order: -1;
         margin-bottom: 2rem;
       }
+      
+      .service-column {
+        width: 100%;
+        float: none;
+        margin-right: 0 !important;
+      }
     }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get all services
+      const services = document.querySelectorAll('.service');
+      
+      // Remove services from their container
+      const servicesArray = Array.from(services);
+      const servicesContainer = document.querySelector('.services-list');
+      servicesContainer.innerHTML = '';
+      
+      // Create two columns
+      const leftColumn = document.createElement('div');
+      leftColumn.classList.add('service-column');
+      
+      const rightColumn = document.createElement('div');
+      rightColumn.classList.add('service-column');
+      
+      // Add columns to container
+      servicesContainer.appendChild(leftColumn);
+      servicesContainer.appendChild(rightColumn);
+      
+      // Distribute services between columns
+      servicesArray.forEach((service, index) => {
+        if (index % 2 === 0) {
+          leftColumn.appendChild(service);
+        } else {
+          rightColumn.appendChild(service);
+        }
+      });
+    });
+  </script>
 </head>
+
 <body>
   <!-- Header - will be loaded via JavaScript -->
   <header class="header"></header>
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="container">
+    <div class="container" style="text-align: center;">
       <h1>Counseling Therapy Services</h1>
       <p>Professional counseling and therapy services for Adults, Children/Adolescents, Couples and Families.</p>
     </div>
@@ -97,19 +183,21 @@
   <section class="section">
     <div class="container">
       <h2 class="section-title">Types of Counseling</h2>
-      
+
       <div class="services-list">
         <div class="service">
+          <img src="images/services1.jpg" alt="Adult Counseling" class="service-image">
           <h3>Adult</h3>
           <p>Anxiety</p>
           <p>Depression</p>
+          <p>Obsession / Compulsions</p>
+          <p>Substance Use - Drug / Alcohol / Recovery</p>
+          <p>Assessment and Referral to Substance Abuse Treatment</p>
+          <p>Grief / Bereavement / Loss / Trauma</p>
           <p>Fears / Phobias</p>
         </div>
         <div class="service">
-          <h3>Couple / Marriage</h3>
-          <p>Couple and / or marriage counseling provides an arena where two people can learn to communicate individual needs and create a healthy relationship that grows and lasts.</p>
-        </div>
-        <div class="service">
+          <img src="images/services3.jpg" alt="Child and Adolescent Therapy" class="service-image">
           <h3>Child / Adolescent</h3>
           <p>Individual child/adolescent counseling</p>
           <p>Family counseling</p>
@@ -117,124 +205,26 @@
           <p>Attention Deficit-Hyperactivity Disorder (ADHD)</p>
           <p>Oppositional Defiant Disorder (ODD)</p>
           <p>School Issues - School Refusal / Avoidant</p>
+          <p>Substance Use - Vaping / Smoking / Drug / Alcohol</p>
           <p>Anxiety</p>
           <p>Depression</p>
+          <p>Obsessions / Compulsions</p>
           <p>Separation Anxiety</p>
           <p>Aggressive and Explosive Behavior</p>
           <p>Emotion Regulation – impulsive, anger, panic</p>
         </div>
         <div class="service">
+          <img src="images/services2.jpg" alt="Couple and Marriage Counseling" class="service-image">
+          <h3>Couple / Marriage</h3>
+          <p>Couple and / or marriage counseling provides an arena where two people can learn to communicate individual needs and create a healthy relationship that grows and lasts. 
+            It can also serve as a safe setting where couples can address issues that have lead to changes in their lives and pave the way to a smoother path to separation and / or divorce.  </p>
+        </div>
+        
+        <div class="service">
+          <img src="images/services4.jpg" alt="Family Counseling" class="service-image">
           <h3>Family Counseling</h3>
-          <p>Family counseling provides family members with a safe and secure setting to reduce stress and conflict through the improvement of interactions between family members.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Detailed Services -->
-  <section class="section" style="background-color: var(--bg-color); padding-top: 0;">
-    <div class="container">
-      <div id="individual" class="service-detail">
-        <div class="service-content">
-          <div class="service-text">
-            <h2>Adult Counseling</h2>
-            <p>Professional counseling for adults dealing with various challenges including:</p>
-            <ul class="benefits-list">
-              <li>Anxiety</li>
-              <li>Depression</li>
-              <li>Bipolar</li>
-              <li>Adult ADHD</li>
-              <li>Obsessions / Compulsions</li>
-              <li>Grief / Loss</li>
-              <li>Trauma / PTSD</li>
-              <li>Substance Abuse Addiction / Recovery</li>
-              <li>Compulsive Gambling / Shopping</li>
-              <li>Work and Career issues</li>
-              <li>COVID Related Issues / Shelter in Place Issues</li>
-              <li>Missing Loved Ones</li>
-              <li>Restricted Visitation of Family / Elderly (Nursing Home / Hospital)</li>
-            </ul>
-          </div>
-          <div class="service-image">
-            <img src="images/Transparentct.png" alt="Adult Counseling">
-          </div>
-        </div>
-      </div>
-      
-      <div id="child" class="service-detail">
-        <div class="service-content">
-          <div class="service-text">
-            <h2>Child / Adolescent</h2>
-            <p>Specialized counseling for children and adolescents, addressing issues such as:</p>
-            <ul class="benefits-list">
-              <li>ADHD / ADD</li>
-              <li>Oppositional Defiant Behavior</li>
-              <li>Anxiety</li>
-              <li>Depression</li>
-              <li>Autism Spectrum</li>
-              <li>School Issues - Academic, Learning, Conduct</li>
-              <li>School Phobia / Refusal</li>
-              <li>Bullying / Teasing</li>
-              <li>Social / Emotional Changes</li>
-              <li>Acting Out Behavior</li>
-              <li>Drug / Alcohol</li>
-              <li>Peer Pressure</li>
-              <li>Separation Anxiety</li>
-              <li>Aggressive and Explosive Behavior</li>
-              <li>Emotion Regulation – impulsive, anger, panic</li>
-            </ul>
-          </div>
-          <div class="service-image">
-            <img src="images/Transparentct.png" alt="Child / Adolescent Counseling">
-          </div>
-        </div>
-      </div>
-      
-      <div id="couples" class="service-detail">
-        <div class="service-content">
-          <div class="service-text">
-            <h2>Couple / Marriage</h2>
-            <p>Couple and / or marriage counseling provides an arena where two people can learn to communicate individual needs and create a healthy relationship that grows and lasts.</p>
-            <p>We help couples address issues with:</p>
-            <ul class="benefits-list">
-              <li>Communication</li>
-              <li>Intimacy</li>
-              <li>Financial</li>
-              <li>Career</li>
-              <li>Parenting Differences</li>
-              <li>Blended Families</li>
-              <li>Infertility</li>
-              <li>Adoption</li>
-              <li>Codependency</li>
-              <li>Anger</li>
-              <li>Aggression</li>
-              <li>Mixed Race Relationships</li>
-            </ul>
-          </div>
-          <div class="service-image">
-            <img src="images/Transparentct.png" alt="Couple / Marriage Counseling">
-          </div>
-        </div>
-      </div>
-      
-      <div id="family" class="service-detail">
-        <div class="service-content">
-          <div class="service-text">
-            <h2>Family Counseling</h2>
-            <p>Family counseling provides family members with a safe and secure setting to reduce stress and conflict through the improvement of interactions between family members.</p>
-            <p>Our family counseling services help with:</p>
-            <ul class="benefits-list">
-              <li>Parent-child relationships</li>
-              <li>Sibling conflicts</li>
-              <li>Family communication</li>
-              <li>Blended family integration</li>
-              <li>Family transitions (divorce, relocation, etc.)</li>
-              <li>Family dynamics affected by illness or loss</li>
-            </ul>
-          </div>
-          <div class="service-image">
-            <img src="images/Transparentct.png" alt="Family Counseling">
-          </div>
+          <p>Family counseling provides family members with a safe and secure setting to reduce stress and conflict through the improvement of interactions between family members.  
+            Family counseling looks at problems as patterns or systems that need to be adjusted, rather than focusing on one person's role in the problem.</p>
         </div>
       </div>
     </div>
@@ -297,4 +287,5 @@
 
   <script src="js/main.js"></script>
 </body>
-</html> 
+
+</html>
