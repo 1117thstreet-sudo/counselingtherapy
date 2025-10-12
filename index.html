@@ -43,25 +43,65 @@
     </div>
   </section>
 
+  <!-- Podcast Section -->
+  <section class="section podcast-section">
+    <div class="container">
+      <div class="podcast-content">
+        <div class="podcast-image">
+          <a href="https://pivotpointnikmichael.com" target="_blank" rel="noopener noreferrer">
+            <img src="images/pivotpoint.jpg" alt="Pivot Point Podcast with Nik Michael">
+          </a>
+        </div>
+        <div class="podcast-text">
+          <h2>Pivot Point Podcast</h2>
+          <div class="podcast-divider"></div>
+          <p>Join me on the Pivot Point Podcast where we explore life's transformative moments, discuss mental health, and share insights on personal growth and wellbeing.</p>
+          <a href="https://pivotpointnikmichael.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Listen to the Podcast</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Features Section -->
   <section class="section">
     <div class="container">
-      <h2 class="section-title">Types of Counseling</h2>
+      <div class="section-header">
+        <h2 class="section-title">Types of Counseling</h2>
+        <p class="section-subtitle">We provide specialized counseling services tailored to your unique needs</p>
+      </div>
       <div class="features">
-        <div class="feature">
-          <img src="images/ct.png" alt="Adult Counseling">
-          <h3>Adult Counseling</h3>
-          <p>Anxiety - Depression - Bipolar - Adult ADHD - Obsessions / Compulsions - Grief / Loss - Trauma /PTSD - Substance Abuse Addiction/ Recovery - Compulsive Gambling / Shopping - Work and Career issues - COVID Related Issues / Shelter in Place Issues - Missing Loved Ones - Restricted Visitation of Family / Elderly (Nursing Home / Hospital)</p>
+        <div class="feature-card">
+          <div class="feature-image-wrapper">
+            <img src="images/types1.png" alt="Adult Counseling">
+          </div>
+          <div class="feature-content">
+            <h3>Adult Counseling</h3>
+            <div class="feature-divider"></div>
+            <p>Anxiety - Depression - Bipolar - Adult ADHD - Obsessions / Compulsions - Grief / Loss - Trauma /PTSD - Substance Abuse Addiction/ Recovery - Compulsive Gambling / Shopping - Work and Career issues - COVID Related Issues / Shelter in Place Issues - Missing Loved Ones - Restricted Visitation of Family / Elderly (Nursing Home / Hospital)</p>
+            <a href="services.html" class="feature-link">Learn More →</a>
+          </div>
         </div>
-        <div class="feature">
-          <img src="images/ct.png" alt="Child / Adolescent">
-          <h3>Child / Adolescent</h3>
-          <p>ADHD / ADD - Oppositional Defiant Behavior - Anxiety - Depression - Autism Spectrum - School Issues - Academic - Learning - Conduct - School Phobia / Refusal - Bullying / Teasing - Social / Emotional Changes - Acting Out Behavior - Drug / Alcohol - Peer Pressure</p>
+        <div class="feature-card">
+          <div class="feature-image-wrapper">
+            <img src="images/types2.jpg" alt="Child / Adolescent">
+          </div>
+          <div class="feature-content">
+            <h3>Child / Adolescent</h3>
+            <div class="feature-divider"></div>
+            <p>ADHD / ADD - Oppositional Defiant Behavior - Anxiety - Depression - Autism Spectrum - School Issues - Academic - Learning - Conduct - School Phobia / Refusal - Bullying / Teasing - Social / Emotional Changes - Acting Out Behavior - Drug / Alcohol - Peer Pressure</p>
+            <a href="services.html" class="feature-link">Learn More →</a>
+          </div>
         </div>
-        <div class="feature">
-          <img src="images/ct.png" alt="Marriage / Couple / Family">
-          <h3>Marriage / Couple / Family</h3>
-          <p>Issues with: Communication - Intimacy - Financial - Career - Parenting Differences - Blended Families - Infertility - Adoption - Codependency - Anger - Aggression - Mixed Race Relationships</p>
+        <div class="feature-card">
+          <div class="feature-image-wrapper">
+            <img src="images/types3.jpeg" alt="Marriage / Couple / Family">
+          </div>
+          <div class="feature-content">
+            <h3>Marriage / Couple / Family</h3>
+            <div class="feature-divider"></div>
+            <p>Issues with: Communication - Intimacy - Financial - Career - Parenting Differences - Blended Families - Infertility - Adoption - Codependency - Anger - Aggression - Mixed Race Relationships</p>
+            <a href="services.html" class="feature-link">Learn More →</a>
+          </div>
         </div>
       </div>
     </div>
@@ -117,58 +157,12 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="section">
+  <section id="contact" class="section" style="background-color: var(--bg-color);">
     <div class="container">
       <h2 class="section-title">Contact Us</h2>
-      <div class="row">
-        <div class="col">
-          <form class="contact-form">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone">
-            </div>
-            <div class="form-group">
-              <label for="service">Service Interested In</label>
-              <select id="service" name="service">
-                <option value="">Select a service</option>
-                <option value="individual">Individual Therapy</option>
-                <option value="couples">Couples Therapy</option>
-                <option value="family">Family Counseling</option>
-                <option value="anxiety">Anxiety Treatment</option>
-                <option value="depression">Depression Therapy</option>
-                <option value="trauma">Trauma Recovery</option>
-                <option value="relationship">Relationship Counseling</option>
-                <option value="grief">Grief Counseling</option>
-                <option value="stress">Stress Management</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
-        </div>
-        <div class="col">
-          <div class="contact-info">
-            <h3>Our Office Location</h3>
-            <div class="office">
-              <h4>Garden City Office</h4>
-              <p>Garden City<br>New York Location</p>
-              <p>TEL: 516 - 482 - 1625</p>
-            </div>
-            <h3>Hours of Operation</h3>
-            <p>Please contact us for current office hours.</p>
-          </div>
-        </div>
+      <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <p style="font-size: 1.1rem; margin-bottom: 2rem; color: var(--text-color);">Ready to schedule an appointment or learn more about our services?</p>
+        <a href="services.html#contact" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">View Contact Information</a>
       </div>
     </div>
   </section>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Office - Counseling Therapy</title>
+  <meta name="description" content="Visit our welcoming therapy office in Garden City. A comfortable, confidential space designed for your healing journey.">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="images/ct.png" type="image/png">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* Office Gallery Styles */
+    .office-gallery-section {
+      padding: 5rem 0;
+    }
+
+    .office-gallery-section h1 {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 3rem;
+    }
+
+    .office-gallery-section .intro-text {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 4rem;
+      font-size: 1.2rem;
+      color: var(--text-color);
+    }
+
+    .office-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 90%;
+      position: relative;
+    }
+
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .lightbox-close:hover {
+      color: var(--secondary-color);
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 20px;
+      user-select: none;
+    }
+
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+      color: var(--secondary-color);
+    }
+
+    .lightbox-prev {
+      left: 20px;
+    }
+
+    .lightbox-next {
+      right: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .office-gallery {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .gallery-item img {
+        height: 300px;
+      }
+
+      .office-gallery-section h1 {
+        font-size: 2rem;
+      }
+
+      .lightbox-prev,
+      .lightbox-next {
+        font-size: 30px;
+        padding: 10px;
+      }
+
+      .lightbox-close {
+        font-size: 30px;
+        right: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header - will be loaded via JavaScript -->
+  <header class="header"></header>
+
+  <!-- Office Gallery Section -->
+  <section class="office-gallery-section">
+    <div class="container">
+      <h1>Our Office</h1>
+      <p class="intro-text">________________________</p>
+      
+      <div class="office-gallery">
+        <div class="gallery-item" data-index="0">
+          <img src="images/office1.jpg" alt="Office view 1">
+        </div>
+        <div class="gallery-item" data-index="1">
+          <img src="images/office2.jpg" alt="Office view 2">
+        </div>
+        <div class="gallery-item" data-index="2">
+          <img src="images/office3.jpg" alt="Office view 3">
+        </div>
+        <div class="gallery-item" data-index="3">
+          <img src="images/office4.jpg" alt="Office view 4">
+        </div>
+        <div class="gallery-item" data-index="4">
+          <img src="images/office5.jpg" alt="Office view 5">
+        </div>
+        <div class="gallery-item" data-index="5">
+          <img src="images/office6.jpg" alt="Office view 6">
+        </div>
+        <div class="gallery-item" data-index="6">
+          <img src="images/office7.jpg" alt="Office view 7">
+        </div>
+        <div class="gallery-item" data-index="7">
+          <img src="images/2office2.jpg" alt="Office view 8">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <span class="lightbox-prev" id="lightbox-prev">&#10094;</span>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Office photo">
+    </div>
+    <span class="lightbox-next" id="lightbox-next">&#10095;</span>
+  </div>
+
+  <!-- Footer - will be loaded via JavaScript -->
+  <footer class="footer"></footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+  <script>
+    // Lightbox functionality
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxPrev = document.getElementById('lightbox-prev');
+    const lightboxNext = document.getElementById('lightbox-next');
+    let currentIndex = 0;
+
+    // Open lightbox
+    galleryItems.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        currentIndex = index;
+        showLightbox();
+      });
+    });
+
+    function showLightbox() {
+      const imgSrc = galleryItems[currentIndex].querySelector('img').src;
+      lightboxImg.src = imgSrc;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Close lightbox
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Navigate lightbox
+    lightboxPrev.addEventListener('click', (e) => {
+      e.stopPropagation();
+      currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+      showLightbox();
+    });
+
+    lightboxNext.addEventListener('click', (e) => {
+      e.stopPropagation();
+      currentIndex = (currentIndex + 1) % galleryItems.length;
+      showLightbox();
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+        showLightbox();
+      } else if (e.key === 'ArrowRight') {
+        currentIndex = (currentIndex + 1) % galleryItems.length;
+        showLightbox();
+      }
+    });
+  </script>
+</body>
+</html>
