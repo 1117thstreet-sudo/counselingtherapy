@@ -70,6 +70,6 @@ This site is ready to be deployed on GitHub Pages.
 ## Contact Information
 
 - Phone: (516)-517-0514
-- Email: info@counselingtherapy.com
+- Email: counselingtherapy@aol.com
 - Location: 7th Street, Garden City, NY 11530
 

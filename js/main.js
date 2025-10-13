@@ -54,6 +54,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
+  // Email Copy to Clipboard Functionality
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('email-copy')) {
+      e.preventDefault();
+      const email = e.target.getAttribute('data-email');
+      
+      if (email) {
+        navigator.clipboard.writeText(email).then(function() {
+          // Show success feedback
+          const originalText = e.target.textContent;
+          e.target.textContent = 'Email Copied!';
+          
+          setTimeout(function() {
+            e.target.textContent = originalText;
+          }, 2000);
+        }).catch(function(err) {
+          console.error('Failed to copy email: ', err);
+          alert('Email: ' + email);
+        });
+      }
+    }
+  });
+  
   // Simple Form Validation for Contact Form
   const contactForm = document.querySelector('.contact-form');
   
