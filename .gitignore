@@ -1,0 +1,39 @@
+# macOS
+.DS_Store
+
+# Dependency directories
+node_modules/
+bower_components/
+
+# Build output
+dist/
+build/
+.cache/
+.next/
+.nuxt/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.*
+
+# Testing and coverage
+coverage/
+.nyc_output/
+
+# IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sass cache
+.sass-cache/
+.cache-loader/
+
