@@ -1,16 +1,21 @@
 #!/bin/bash
 # Build and deploy the Pivot Point podcast page
 #
-# Source repo: /Users/nickmichael/Documents/GitHub/pivot-point-stories
-# Deploy target: /Users/nickmichael/Documents/GitHub/counselingtherapy/pivotpoint
+# Source repo: ../pivot-point-stories (sibling of this repo)
+# Deploy target: ./pivotpoint
 #
 # The pivotpoint/ directory in this repo contains BUILT OUTPUT ONLY.
 # All source code edits must be made in the pivot-point-stories repo,
 # then built and copied here.
+#
+# WARNING (Sep 2026): the pivot-point-stories repo on GitHub is out of date.
+# It predates the Google Form questionnaire links, the Substack embed/link and
+# the photo path fixes, which were made directly in the built bundle here.
+# Rebuilding from it will undo those changes until they are ported to source.
 
 set -e
 
-SOURCE_DIR="/Users/nickmichael/Documents/GitHub/pivot-point-stories"
+SOURCE_DIR="$(cd "$(dirname "$0")/../.." && pwd)/pivot-point-stories"
 DEPLOY_DIR="$(cd "$(dirname "$0")/.." && pwd)/pivotpoint"
 
 echo "Building pivot-point-stories..."

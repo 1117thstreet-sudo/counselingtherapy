@@ -104,6 +104,12 @@ img {
   align-items: center;
 }
 
+/* Keep anchor targets clear of the sticky header */
+.service[id],
+section[id] {
+  scroll-margin-top: 110px;
+}
+
 .logo a {
   display: flex;
   align-items: center;
@@ -1170,20 +1176,29 @@ input:focus, select:focus, textarea:focus {
 @media (max-width: 768px) {
   .header .container {
     flex-direction: column;
-    padding: 1rem 0;
+    padding: 1rem;
     position: relative;
   }
   
   .logo {
-    margin-bottom: 1rem;
-    margin-top: 2rem;
+    align-self: flex-start;
+    padding-right: 3rem;
+  }
+
+  .logo h1 {
+    font-size: 1.05rem;
+    white-space: nowrap;
   }
   
   .nav-toggle {
     display: block;
     position: absolute;
-    top: 0.75rem;
+    top: calc(1rem + 15px);
     right: 1rem;
+  }
+
+  .nav {
+    width: 100%;
   }
   
   .nav ul {
